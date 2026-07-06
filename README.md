@@ -1,4 +1,4 @@
-# Teacup-T41
+# Teacup Neo
 
 T41 (QFN96) adaptation of the [Teacup Rev-C](https://github.com/CapnRon/Teacup) T31 development board.
 
