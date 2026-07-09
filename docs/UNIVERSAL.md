@@ -173,11 +173,22 @@ A small **I2C EEPROM** (or 3–4 resistor-strapped ID pins) on the interposer so
 (skip only 5V/GND). Whatever interposer is plugged in, its live pins are all
 accessible — this is the point of a bench board.
 
-Superset = union across the biggest package (BGA232): ~PA×32 + PB×32 + PC×~21
-≈ 100 GPIO, + analog block (2× CSI 4-lane for T40/T41 dual-sensor, USB, audio,
-SADC), + straps, + power/GND (generous — 30-40 GND for returns). ≈ 160–190
-signals → fits 314 with headroom. (Dual 4-lane CSI *and* full DVP16
-simultaneously would push ~240 and argue for MXM3-314's full width.)
+**314 validated sufficient.** A1 and T40 are BGA356/381, but balls ≠ connector
+signals: most balls are power/ground distribution and (on external-DDR variants)
+the ~90-ball DDR bus — **none of which cross the connector** (DDR routes local to
+the SoC on the interposer). Actual external signal counts: **T40 ~120 GPIO** (PA–
+PD, from datasheet mux table) + ~30 analog (2× CSI, USB, audio, SADC) ≈ 150;
+T41 BGA232 ~130; A1 adds ~25 unique (HDMI/VGA/DSI). Superset union ≈ **~175 sig**.
+
+```
+~175 signals + ~25 power + ~50 ground ≈ 250 of 314  →  ~64 spare (~20% headroom)
+```
+
+Margin is eaten only by the two deferred cases (dual-CSI+DVP16 simultaneous,
++~36; A1 video kept distinct, +~25). **Escape valve:** A1 (video-out) and the
+T-cameras never share an interposer, so their mutually-exclusive peripherals can
+occupy the **same** connector positions if it ever gets tight. No single
+interposer needs every peripheral of every SoC at once.
 
 **Assign geography-first, not by GPIO bank order:** place the carrier floorplan
 (connector + peripheral connectors), then assign the 314 positions so nets exit
