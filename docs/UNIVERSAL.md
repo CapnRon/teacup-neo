@@ -32,17 +32,24 @@ carrier footprint for one, the card is universal):
 | Contacts | 314 | 260 |
 | Pitch | 0.5 mm | 0.5 mm |
 | Card thickness | 1.2 mm | 1.0 mm |
-| In-stock parts | **Amphenol 10151114-001TLF** (5.0 mm stack, SnapEDA footprint exists); **ATTEND 125B-78C00** (~1.1k @ DigiKey, $16.69) | TE 2309407-2 / ATTEND 124A-52A03; **many, ubiquitous** |
-| LCSC / JLCPCB | **NOT stocked** → hand-solder socket | **stocked** (167 in DDR memory-conn cat) → auto-placeable |
-| Headroom | ~65 ground after full superset | ~65 ground after full superset |
+| In-stock parts | **Amphenol 10151114-001TLF** (5.0 mm stack, first-tier); **ATTEND 125B-78C00** (~1.1k @ DigiKey, $16.69); **JAE MM70-314B1-2-R300** | TE 2309407-2 / ATTEND 124A-52A03; **many, ubiquitous** |
+| LCSC / JLCPCB | **JAE MM70-314B1-2-R300 = LCSC C4818180**, 25 in stock ~$10.69–14.35, **discontinued** (last stock) → JLCPCB-assemblable for a first run | **stocked** (167 in DDR memory-conn cat) → auto-placeable, sustained |
+| Headroom | ~119 ground after full superset | ~65 ground after full superset |
+
+**Footprints / links:**
+- Amphenol 10151114-001TLF footprint+symbol: <https://www.snapeda.com/search/?q=10151114-001TLF&search-type=parts>
+- JAE MM70-314B1-2-R300 on LCSC (25 stock, EasyEDA footprint): <https://www.lcsc.com/product-detail/C4818180.html>
+- Each maker's socket has a **different SMT land pattern** — the carrier footprint
+  commits to one. TODO: check whether the JAE and Amphenol MXM3 land patterns
+  align (if so, proto on JAE/LCSC → production on Amphenol with no re-spin).
 
 **Sourcing reality (verified 2026-07):** MXM3 is a fading laptop-GPU part — JAE
-MM70-314 is **obsolete**, ACES 52741-3140A-002 **0-stock**. Amphenol + ATTEND are
-the live first-tier options; not on LCSC. The **SO-DIMM is the more buildable
-choice** (ubiquitous, cheap, LCSC/JLCPCB), and its 260 pins are **enough** — see
-§8. Recommendation: lay out for MXM3-314 for spare grounds if Amphenol stock
-holds; keep SO-DIMM-260 as the drop-in-different-footprint fallback (same edge,
-1.0 mm card, re-spun carrier footprint).
+MM70-314 is **discontinued** (but LCSC still has 25), ACES 52741-3140A-002
+**0-stock**; **Amphenol 10151114-001TLF** is the live first-tier go-forward.
+Practical path: **proto via JLCPCB using the JAE (C4818180) footprint** while the
+25 last, or design straight to Amphenol (hand-solder / DigiKey). The **SO-DIMM-260
+is the sustained LCSC-friendly fallback** — same 0.5 mm edge, 1.0 mm card, its 260
+pins are **enough** (§8), just a re-spun carrier footprint.
 
 ---
 
