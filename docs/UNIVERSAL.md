@@ -183,10 +183,19 @@ XBurst2 core requirement is what sets the VCORE size — a T41-only board could 
 **Directive (CaptainRon):** the interposer should carry the minimum to be a
 **self-contained testable system off the carrier** — just test pads for a minimum
 viable system. Baseline set:
-- **UART pad** — debug console (UART1), so you can watch boot with no carrier.
+- **USB pads** — the SoC USB (D+/D−/VBUS/GND), for **DFU flashing + USB gadget**
+  standalone. The primary bring-up interface: Ingenic parts load firmware via
+  bootrom **USB boot / DFU**, so this is how you flash a bare interposer with no
+  carrier. Short stub off the USB line (the same USB also crosses the connector to
+  the carrier's USB-C); keep the tap short for HS integrity, or castellated pads /
+  a micro-USB for convenience.
+- **UART pad** — debug console (UART1), to watch boot alongside the USB flash.
 - **Flash chip pads** — the 8-pad SPI NOR footprint (boot + direct program).
 - **Voltage pads** — power-in / probe for each rail (below).
 - **Clock** — the 24 MHz crystal (already local per §5).
+
+With USB + UART + power + NOR, a bare interposer is fully bring-up-able: power it,
+**DFU-flash over USB**, watch the console over UART — the complete standalone loop.
 
 Power it, console it, flash it **on the bench with no carrier at all.** This *is*
 the self-contained interposer (mode A) — the pads just make bring-up + fault-find
