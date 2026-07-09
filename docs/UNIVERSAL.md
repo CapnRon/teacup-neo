@@ -178,18 +178,30 @@ XBurst2 core requirement is what sets the VCORE size — a T41-only board could 
 
 ---
 
-## 6. Bench test pads (per isolated domain)
+## 6. Interposer bench bring-up — MVP test pads
 
-For standalone bring-up / external-PSU injection when testing an interposer off
-the carrier. Placed on the SoC side of each rail's bead/0R so a domain can be
-isolated and injected. Per **isolated domain**, not per voltage — because a
-fault in the USB PHY vs the core digital should be distinguishable:
+**Directive (CaptainRon):** the interposer should carry the minimum to be a
+**self-contained testable system off the carrier** — just test pads for a minimum
+viable system. Baseline set:
+- **UART pad** — debug console (UART1), so you can watch boot with no carrier.
+- **Flash chip pads** — the 8-pad SPI NOR footprint (boot + direct program).
+- **Voltage pads** — power-in / probe for each rail (below).
+- **Clock** — the 24 MHz crystal (already local per §5).
+
+Power it, console it, flash it **on the bench with no carrier at all.** This *is*
+the self-contained interposer (mode A) — the pads just make bring-up + fault-find
+possible before the carrier exists.
+
+**Voltage pads — fuller version (per isolated domain).** For fault-isolation
+granularity, place a pad on the SoC side of each rail's bead/0R so a domain can be
+isolated and injected — per **isolated domain**, not per voltage:
 
 `VCORE · VCORE-analog(0.9) · VDDR · +1.8-digital · +1.8-analog · +3.3-digital ·
 +3.3-USB(USB_AVD33) · +5V · GND · EFUSE-program`
 
 ~7 rail pads for a fully-isolated interposer; a couple collapse into the chip on
 SIP-QFN parts. A1 (USB ×3 + VGA + HDMI islands) is the worst case for pad count.
+For the MVP, the coarse set (VCORE, VDDR, +1.8, +3.3, +5V, GND) is enough.
 
 ---
 
