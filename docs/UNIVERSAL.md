@@ -263,7 +263,7 @@ committed`:
 So **260 pins clears the *full* superset** (incl. A1 video) with ~65 grounds —
 enough for 1.5 Gbps MIPI + 125 MHz RGMII. 314 just buys spare grounds we don't
 strictly need. The only thing that would exceed 260 is a 1-GND-per-signal scheme
-(overkill at our speeds) or dual-CSI+DVP16 simultaneous (+~36, deferred §9).
+(overkill at our speeds) or dual-CSI+DVP16 simultaneous (+~36, deferred §10).
 **Escape valve:** A1 (video-out) and the T-cameras never share an interposer, so
 their mutually-exclusive peripherals can occupy the **same** connector positions
 if it ever gets tight. No single
@@ -279,7 +279,61 @@ MIPI pairs by the FFC, MSC0 by the SD slot, GPIO banks by their headers. Rules:
 
 ---
 
-## 9. Open / deferred / decided
+## 9. Management controller (ESP32-S3 BMC) — autonomous / LLM-driven dev
+
+The carrier carries an **ESP32-S3** as an on-board **baseboard management
+controller** so an agent (an LLM, CI, or a human) can drive the target **wired
+*or* wireless**, hands-off. It's powered independently of the SoC (stays alive to
+reset/recover it) and lives on the **carrier** (universal — manages whatever
+interposer is plugged in).
+
+**Why ESP32-S3:** native **USB-OTG + USB-Serial-JTAG** (wired console/control to a
+host) **and WiFi + BLE** (wireless), dual-core, ample GPIO. ESP32-C3 is the budget
+cut (USB-Serial-JTAG + WiFi, fewer pins).
+
+**Control plane** (agent-facing API over USB-CDC *and/or* WiFi REST/MQTT/telnet):
+
+| Function | Mechanism | Silicon |
+|---|---|---|
+| **Reset** (QFN = POR-only → power-cycle) | gate the interposer's 5 V | **load-switch IC** (TPS22918-class), ESP32 drives `EN` |
+| **BOOTSEL** (SFC / SD / USB boot) | drive the strap at POR | ESP32 GPIO + 1 K series R |
+| **Flash sharing** (SoC ↔ ESP32) | SoC powered + **BOOTSEL-diverted → SFC is high-Z** ("Hi-Z-rst"); ESP32 owns the shared SPI bus, each master tristates when idle | **just GPIO** (CS + BOOTSEL); a ~6-ch **bus switch is optional** — only to program a fully-*off* SoC |
+| **Flash select** (DIP8 ↔ SOP8) | pick the active CS | ESP32 GPIO |
+| **Console** | UART1 ↔ WiFi and/or USB-CDC | ESP32 UART |
+| USB VBUS (if SoC host mode) | current-limited switch | USB power switch (TPS2051-class) |
+
+Added switching silicon: **one load switch + one bus switch + a couple of GPIOs** —
+all 3.3 V logic, driven straight off the ESP32. No relays/SSRs (wrong tool for
+on-board DC/logic).
+
+**Autonomous flash loop — no DFU, no host tools:**
+1. ESP32 sets **BOOTSEL → USB** and power-cycles → bootrom diverts to USB boot and
+   **leaves SFC high-Z** (never drives the flash bus).
+2. SoC powered + SFC high-Z → no contention, no ESD back-power → **ESP32 owns the
+   shared SPI bus** and programs the NOR (flashrom-style; SOP8 or DIP8), driving CS.
+3. ESP32 sets **BOOTSEL → SFC**, tristates its SPI, power-cycles → SoC boots the
+   new image.
+4. ESP32 streams UART1 back over WiFi/USB → agent reads the result.
+
+Only a fully-*off* SoC (e.g. a bricked part that won't reach USB-boot) needs the
+optional bus switch to isolate its SFC; the normal loop is just CS + BOOTSEL.
+
+So an agent runs **`flash(image)` → `reset()` → `read_console()`** entirely over
+the network — this is what makes "an LLM drives this board" real (same pattern as
+the opi-closet relay lab, collapsed onto the carrier).
+
+**Flash arrangement:** the interposer's SOP8 NOR is the module's default boot
+(CS0); an optional **DIP8 socket on the carrier** (swappable, on the shared SFC bus
+across the connector, CS-selected) holds alternate / recovery images. The ESP32
+programs either. Arbitration rule as always: SoC-owns *or* ESP32-owns, never both.
+
+**Management lines across the connector:** BOOTSEL, reset/power-EN, the SFC flash
+bus (CS/CLK/IO0-3), and UART1 run from the carrier BMC to the interposer — a
+handful of the 260 positions, already part of the SoC signal set (§8).
+
+---
+
+## 10. Open / deferred / decided
 
 **Open:**
 - **Peripheral 3.3/1.8 source**: carrier-local reg off 5V (keeps interposer
