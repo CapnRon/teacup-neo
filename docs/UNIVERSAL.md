@@ -72,16 +72,17 @@ Hard SI rules (why the interposer can't just draw everything across the edge):
 Nominal voltages from each SoC's `*_BOARD_DESIGN_GUIDE` / datasheet in
 `~/projects/thingino/ingenic-docs`. Core/DDR vary; 1.8/3.3 are universal.
 
-| Rail | T10/T20 | T21 | T23 | T30* | T31 | T32 | T33 | T40 | T41 | A1 |
+| Rail | T10/T20 | T21 | T23 | T30 | T31 | T32 | T33 | T40 | T41 | A1 |
 |---|---|---|---|---|---|---|---|---|---|---|
-| **VDD core** | 1.1 | 1.0 | 0.8 | ~1.0 | 0.8 | 0.8 | 0.9 | 0.9 | 0.8 | 0.9 |
-| **DDR** (VDDMEM/DDRVDD) | 1.8 | 1.8/1.5 | 1.8/1.5 | 1.8/1.5 | 1.8/1.5/1.35 | 1.5/1.35 | 1.35/1.5/1.8 | 1.35 | 1.35/1.5/1.8 | 1.8 |
+| **VDD core** | 1.1 | 1.0 | 0.8 | 1.0 | 0.8 | 0.8 | 0.9 | 0.9 | 0.8 | 0.9 |
+| **DDR** (VDDMEM/DDRVDD) | 1.8 | 1.8/1.5 | 1.8/1.5 | 1.8 | 1.8/1.5/1.35 | 1.5/1.35 | 1.35/1.5/1.8 | 1.35 | 1.35/1.5/1.8 | 1.8 |
 | **+1.8 V** analog/IO | DVP only† | 1.8 | 1.8 | 1.8 | 1.8 | 1.8 | 1.8 | 1.8 | 1.8 | 1.8 |
 | **+3.3 V** IO | 3.3 | 3.3 | 3.3 | 3.3 | 3.3 | 3.3 | 3.3 | 3.3 | 3.3 | 3.3 |
-| **+0.9 V** analog (PLL_VDD/USB_09/CSI_09) | 1.1 | 1.0 | 0.8 | ~1.0 | 0.8 | 0.8 | 0.9 | 0.9 | int‡ | 0.9 |
-| EFUSE (burn only) | **2.5** | 1.5 | 1.8 | 1.8 | 1.8 | 1.8 | 1.8 | 1.8 | 1.8 | 1.8 |
+| **+0.9 V** analog (PLL_VDD/USB_09/CSI_09) | 1.1 | 1.0 | 0.8 | 1.0 | 0.8 | 0.8 | 0.9 | 0.9 | int‡ | 0.9 |
+| EFUSE (burn only) | **2.5** | 1.5 | 1.8 | **1.5** | 1.8 | 1.8 | 1.8 | 1.8 | 1.8 | 1.8 |
 
-\* T30 = envelope estimate (datasheet didn't extract cleanly; sits between T23/T31).
+T30 confirmed from `T30 ... Data Sheet.20180416`: core 1.0 V, DDR 1.8 V (DDR2),
+1.8 analog, 3.3 IO, RTC 1.0 V, EFUSE 1.5 V.
 † **T10/T20 is the outlier** — 65 nm-era: core 1.1 V, analog (ADC/CODEC/PLL-HV) on
 **3.3 V** not 1.8, EFUSE 2.5 V. It only uses 1.8 for the DVP sensor.
 ‡ On **SIP-QFN** parts (T31ZX, T41NQ/XQ) the 0.8–0.9 V analog sub-rails are
@@ -206,10 +207,10 @@ MIPI pairs by the FFC, MSC0 by the SD slot, GPIO banks by their headers. Rules:
 - **Peripheral 3.3/1.8 source**: carrier-local reg off 5V (keeps interposer
   SoC-only) — assumed yes; confirm.
 - **VCORE remote-sense** wiring in mode B (transient response).
-- Exact **T30** rails + currents (datasheet didn't extract; envelope only, sits
-  between T23/T31). **T20 is confirmed** — based on the **T10 datasheet** (same
-  silicon: core 1.1 V, DDR 1.8 V, analog on 3.3 V, EFUSE 2.5 V, VDDCORE/VDDMEM
-  ≥1 A), per the table above.
+- Rail table is now **confirmed for the whole family** — T20 via the T10
+  datasheet (same silicon), T30 via its own datasheet. Only unstated number left
+  is T30's exact core current (no board design guide); assumed ≥1 A per the
+  XBurst1 norm and covered by the ≥3 A universal VCORE spec regardless.
 
 **Deferred (decide later):**
 - Whether to break out **dual 4-lane CSI + DVP16 simultaneously** — the one
