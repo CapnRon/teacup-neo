@@ -6,6 +6,11 @@ Targets **T41NQ (128MB)**, **T41XQ (256MB)**, and **T41LQ (64MB)** — all three
 pin-identical in the QFN96 package, so one layout serves all three as a stuffing
 option (LQ needs the DDR rail set to 1.8V instead of 1.35V via the FB divider).
 
+> **Where this is going:** teacup-neo is the single-SoC (T41) proof for a modular
+> platform — a universal baseboard + per-SoC MXM3 interposer modules that host any
+> Ingenic T-series/A1 SoC regardless of package. Full spec in
+> [`docs/UNIVERSAL.md`](docs/UNIVERSAL.md).
+
 ## Status
 
 | Stage | State |
