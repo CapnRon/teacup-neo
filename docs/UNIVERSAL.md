@@ -189,23 +189,30 @@ MIPI pairs by the FFC, MSC0 by the SD slot, GPIO banks by their headers. Rules:
 
 ---
 
-## 9. Open items
+## 9. Open / deferred / decided
 
+**Open:**
 - **Peripheral 3.3/1.8 source**: carrier-local reg off 5V (keeps interposer
   SoC-only) — assumed yes; confirm.
 - **VCORE remote-sense** wiring in mode B (transient response).
 - Exact **T30 currents** + **T20/T30** full rail confirmation (datasheets).
-- Whether to stay **mateable with Ingenic's TOMCAT core-board** convention so
-  genuine vendor modules could drop in — worth checking their B2B + pin map in
-  ingenic-docs before freezing ours.
-- Connector count if we commit to **dual 4-lane CSI + DVP16** simultaneously.
+
+**Deferred (decide later):**
+- Whether to break out **dual 4-lane CSI + DVP16 simultaneously** — the one
+  requirement that could push the pinout past 314. Single CSI block fits with
+  headroom; revisit if multi-sensor (T40/T41) becomes a target use case.
+
+**Decided:**
+- This is an **independent design** — the pinout is ours, NOT constrained to be
+  mateable with Ingenic's TOMCAT / vendor core-board convention. MXM3 is used
+  mechanically only.
 
 ---
 
 ## References
 
 All in `~/projects/thingino/ingenic-docs`: per-SoC `HDK/*_BOARD_DESIGN_GUIDE`,
-`HDK/*Hardware Design Checklist`, and `Datasheets/*`. Vendor QFN96 core/carrier
-precedent: `T41/HDK/Schematics/RD_T41_TOMCAT_*`, `MARK_C90_MAIN_V2_0_QFN96`.
-teacup-neo (this repo) is the first single-SoC (T41) proof; the interposer is its
-SoC section lifted onto an MXM3 edge.
+`HDK/*Hardware Design Checklist`, and `Datasheets/*` (source of the rail table).
+`MARK_C90_MAIN_V2_0_QFN96` informed teacup-neo's T41 power tree. teacup-neo (this
+repo) is the first single-SoC (T41) proof; the interposer is its SoC section
+lifted onto an MXM3 edge.
