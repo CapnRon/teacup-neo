@@ -111,6 +111,22 @@ Hard SI rules (why the interposer can't just draw everything across the edge):
   interposer must carry strong local decoupling to cover connector inductance on
   the fast core transient.
 
+**Digital voltage control (digipot) — software-set VCORE/VDDR + margining.** In
+mode B, digitize each buck's FB divider with a **dual non-volatile I²C digipot**
+(**MCP4661**, 257 taps ≈ ~1 mV/step over the core span; LCSC C145605/C637131 —
+*stock thin, confirm at BOM or sub any dual-NV I²C pot*). The **ESP32 BMC** (§9)
+sets it, making the whole power path software-defined and unlocking **voltage
+margining**: the agent can sweep VCORE to find a SoC's minimum-stable core voltage,
+undervolt headroom, and stability margins — real characterization, LLM-driven.
+- **Ratiometric** — use the pot as the divider ratio so its ±20% absolute
+  tolerance cancels; only the ratio sets voltage.
+- **Loop stability** — the wiper R/C sits on the FB node; keep the feed-forward
+  cap and check the buck's compensation.
+- **Safe sequencing (critical)** — the BMC **sets the digipot *then* enables the
+  rail** (load switch / buck EN), so VCORE is never brought up over-voltage on a
+  0.8 V part. The NV pot retains its setting across power cycles; the BMC-gated
+  enable covers the very first boot. This is the resolution to mode-B FB safety.
+
 ---
 
 ## 3. SoC input-rail reference (T10 → A1)
@@ -310,9 +326,14 @@ shave cost; **ESP32-S3-MINI-1** if space-tight (same silicon/USB, less flash/PSR
 | **Console** | UART1 ↔ WiFi and/or USB-CDC | ESP32 UART |
 | USB VBUS (if SoC host mode) | current-limited switch | USB power switch (TPS2051-class) |
 
-Added switching silicon: **one load switch + one bus switch + a couple of GPIOs** —
-all 3.3 V logic, driven straight off the ESP32. No relays/SSRs (wrong tool for
-on-board DC/logic).
+Added switching silicon: **one load switch + a couple of GPIOs** (bus switch only
+for the fully-off-SoC flash case) — all 3.3 V logic, driven straight off the ESP32.
+No relays/SSRs (wrong tool for on-board DC/logic).
+
+**Beyond switching, the BMC sets the rail voltages** via the **MCP4661 digipot**
+(§2): read the carrier ID (§7) → set VCORE/VDDR for that SoC → enable the rails
+(voltage *before* enable = safe) → optionally **sweep VCORE for margining**. Ties
+adjustable power (§2), ID (§7), and the BMC into one digital flow.
 
 **Autonomous flash loop — no DFU, no host tools:**
 1. ESP32 sets **BOOTSEL → USB** and power-cycles → bootrom diverts to USB boot and
