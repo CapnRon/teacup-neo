@@ -1,0 +1,20 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "50e30d8c-4c81-41f6-a0d7-acb5f7774314")
+	(paper "A2")
+	(title_block
+		(title "Teacup Universal - Pin Breakout Headers")
+		(date "2026-07-11")
+		(rev "A")
+		(company "Teacup Universal")
+	)
+	(lib_symbols
+	)
+	(sheet_instances
+		(path "/231b19b6-10aa-4c31-8a87-6ff26545c5c5"
+			(page "6")
+		)
+	)
+)
