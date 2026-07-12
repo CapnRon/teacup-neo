@@ -1039,15 +1039,15 @@ J9  (TYPE-C-31-M-12)
 
 Q1  (AO3401A)
       footprint: Package_TO_SOT_SMD:SOT-23
-      pin    D                       -> +5V_ALT
-      pin    G                       -> Q1_GATE
-      pin    S                       -> DCJACK_VBUS
+      pin    1  G                    -> Q1_GATE
+      pin    2  S                    -> DCJACK_VBUS
+      pin    3  D                    -> +5V_ALT
 
 Q2  (AO3401A)
       footprint: Package_TO_SOT_SMD:SOT-23
-      pin    D                       -> +5V_ALT
-      pin    G                       -> Q2_GATE
-      pin    S                       -> ALTUSB_VBUS
+      pin    1  G                    -> Q2_GATE
+      pin    2  S                    -> ALTUSB_VBUS
+      pin    3  D                    -> +5V_ALT
 
 R12  (5.1k)
       footprint: Resistor_SMD:R_0402_1005Metric
