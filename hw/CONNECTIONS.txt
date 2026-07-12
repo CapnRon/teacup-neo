@@ -373,89 +373,89 @@ J1  (AH58893-T9B10-3F)
       pin   84  P84                  -> MIPI1_CLKP
       pin   85  P85                  -> GND
       pin   86  P86                  -> HOSTED_RESET
-      pin   87  P87                  -> RESERVED_P87
-      pin   88  P88                  -> RESERVED_P88
-      pin   89  P89                  -> RESERVED_P89
-      pin   90  P90                  -> RESERVED_P90
-      pin   91  P91                  -> RESERVED_P91
-      pin   92  P92                  -> RESERVED_P92
-      pin   93  P93                  -> RESERVED_P93
-      pin   94  P94                  -> RESERVED_P94
-      pin   95  P95                  -> RESERVED_P95
-      pin   96  P96                  -> RESERVED_P96
-      pin   97  P97                  -> (not connected)
-      pin   98  P98                  -> (not connected)
-      pin   99  P99                  -> (not connected)
-      pin  100  P100                 -> (not connected)
-      pin  101  P101                 -> (not connected)
-      pin  102  P102                 -> (not connected)
-      pin  103  P103                 -> (not connected)
-      pin  104  P104                 -> (not connected)
-      pin  105  P105                 -> (not connected)
-      pin  106  P106                 -> (not connected)
-      pin  107  P107                 -> (not connected)
-      pin  108  P108                 -> (not connected)
-      pin  109  P109                 -> (not connected)
-      pin  110  P110                 -> (not connected)
-      pin  111  P111                 -> (not connected)
-      pin  112  P112                 -> (not connected)
-      pin  113  P113                 -> (not connected)
-      pin  114  P114                 -> (not connected)
-      pin  115  P115                 -> (not connected)
-      pin  116  P116                 -> (not connected)
-      pin  117  P117                 -> (not connected)
-      pin  118  P118                 -> (not connected)
-      pin  119  P119                 -> (not connected)
-      pin  120  P120                 -> (not connected)
-      pin  121  P121                 -> (not connected)
-      pin  122  P122                 -> (not connected)
-      pin  123  P123                 -> (not connected)
-      pin  124  P124                 -> (not connected)
-      pin  125  P125                 -> (not connected)
-      pin  126  P126                 -> (not connected)
-      pin  127  P127                 -> (not connected)
-      pin  128  P128                 -> (not connected)
-      pin  129  P129                 -> (not connected)
-      pin  130  P130                 -> (not connected)
-      pin  131  P131                 -> (not connected)
-      pin  132  P132                 -> (not connected)
-      pin  133  P133                 -> (not connected)
-      pin  134  P134                 -> (not connected)
-      pin  135  P135                 -> (not connected)
-      pin  136  P136                 -> (not connected)
-      pin  137  P137                 -> (not connected)
-      pin  138  P138                 -> (not connected)
-      pin  139  P139                 -> (not connected)
-      pin  140  P140                 -> (not connected)
-      pin  141  P141                 -> (not connected)
-      pin  142  P142                 -> (not connected)
-      pin  143  P143                 -> (not connected)
-      pin  144  P144                 -> (not connected)
-      pin  145  P145                 -> (not connected)
-      pin  146  P146                 -> (not connected)
-      pin  147  P147                 -> (not connected)
-      pin  148  P148                 -> (not connected)
-      pin  149  P149                 -> (not connected)
-      pin  150  P150                 -> (not connected)
-      pin  151  P151                 -> (not connected)
-      pin  152  P152                 -> (not connected)
-      pin  153  P153                 -> (not connected)
-      pin  154  P154                 -> (not connected)
-      pin  155  P155                 -> (not connected)
-      pin  156  P156                 -> (not connected)
-      pin  157  P157                 -> (not connected)
-      pin  158  P158                 -> (not connected)
-      pin  159  P159                 -> (not connected)
-      pin  160  P160                 -> (not connected)
-      pin  161  P161                 -> (not connected)
-      pin  162  P162                 -> (not connected)
-      pin  163  P163                 -> (not connected)
-      pin  164  P164                 -> (not connected)
-      pin  165  P165                 -> (not connected)
-      pin  166  P166                 -> (not connected)
-      pin  167  P167                 -> (not connected)
-      pin  168  P168                 -> (not connected)
-      pin  169  P169                 -> (not connected)
+      pin   87  P87                  -> GMAC0_MDIO
+      pin   88  P88                  -> GMAC0_MDCK
+      pin   89  P89                  -> GMAC0_TXCLK
+      pin   90  P90                  -> GMAC0_PHYCLK
+      pin   91  P91                  -> GMAC0_TXEN
+      pin   92  P92                  -> GMAC0_TXD0
+      pin   93  P93                  -> GMAC0_TXD1
+      pin   94  P94                  -> GMAC0_RXDV
+      pin   95  P95                  -> GMAC0_RXD0
+      pin   96  P96                  -> GMAC0_RXD1
+      pin   97  P97                  -> GND
+      pin   98  P98                  -> UART0_RXD
+      pin   99  P99                  -> UART0_TXD
+      pin  100  P100                 -> UART0_CTS
+      pin  101  P101                 -> UART0_RTS
+      pin  102  P102                 -> GND
+      pin  103  P103                 -> UART2_RXD
+      pin  104  P104                 -> UART2_TXD
+      pin  105  P105                 -> UART2_CTS
+      pin  106  P106                 -> UART2_RTS
+      pin  107  P107                 -> GND
+      pin  108  P108                 -> UART3_RXD
+      pin  109  P109                 -> UART3_TXD
+      pin  110  P110                 -> UART3_CTS
+      pin  111  P111                 -> UART3_RTS
+      pin  112  P112                 -> GND
+      pin  113  P113                 -> GMAC1_MDIO
+      pin  114  P114                 -> GMAC1_MDCK
+      pin  115  P115                 -> GMAC1_TXCLK
+      pin  116  P116                 -> GMAC1_PHYCLK
+      pin  117  P117                 -> GMAC1_TXEN
+      pin  118  P118                 -> GMAC1_TXD0
+      pin  119  P119                 -> GMAC1_TXD1
+      pin  120  P120                 -> GMAC1_RXDV
+      pin  121  P121                 -> GMAC1_RXD0
+      pin  122  P122                 -> GMAC1_RXD1
+      pin  123  P123                 -> GND
+      pin  124  P124                 -> SSI0_CLK
+      pin  125  P125                 -> SSI0_DT
+      pin  126  P126                 -> SSI0_DR
+      pin  127  P127                 -> SSI0_CE0
+      pin  128  P128                 -> SSI0_CE1
+      pin  129  P129                 -> SSI0_GPC
+      pin  130  P130                 -> GND
+      pin  131  P131                 -> SSI1_CLK
+      pin  132  P132                 -> SSI1_DT
+      pin  133  P133                 -> SSI1_DR
+      pin  134  P134                 -> SSI1_CE0
+      pin  135  P135                 -> GND
+      pin  136  P136                 -> PWM0
+      pin  137  P137                 -> PWM1
+      pin  138  P138                 -> PWM2
+      pin  139  P139                 -> PWM3
+      pin  140  P140                 -> PWM4
+      pin  141  P141                 -> PWM5
+      pin  142  P142                 -> PWM6
+      pin  143  P143                 -> PWM7
+      pin  144  P144                 -> GND
+      pin  145  P145                 -> GND
+      pin  146  P146                 -> SAR_AUX0
+      pin  147  P147                 -> GND
+      pin  148  P148                 -> SMB0_SDA
+      pin  149  P149                 -> SMB0_SCK
+      pin  150  P150                 -> SMB1_SDA
+      pin  151  P151                 -> SMB1_SCK
+      pin  152  P152                 -> GND
+      pin  153  P153                 -> GPIO0
+      pin  154  P154                 -> GPIO1
+      pin  155  P155                 -> GPIO2
+      pin  156  P156                 -> GPIO3
+      pin  157  P157                 -> GPIO4
+      pin  158  P158                 -> GPIO5
+      pin  159  P159                 -> GPIO6
+      pin  160  P160                 -> GPIO7
+      pin  161  P161                 -> GPIO8
+      pin  162  P162                 -> GPIO9
+      pin  163  P163                 -> GPIO10
+      pin  164  P164                 -> GPIO11
+      pin  165  P165                 -> GPIO12
+      pin  166  P166                 -> GPIO13
+      pin  167  P167                 -> GPIO14
+      pin  168  P168                 -> GPIO15
+      pin  169  P169                 -> GND
       pin  170  P170                 -> (not connected)
       pin  171  P171                 -> (not connected)
       pin  172  P172                 -> (not connected)
@@ -928,4 +928,122 @@ R19  (5.1k)
       footprint: Resistor_SMD:R_0402_1005Metric
       pin    1                       -> USBC2_CC2
       pin    2                       -> GND
+
+### PIN BREAKOUT HEADERS
+--------------------------------------------------------------------------------
+
+J20  (HDR_J20)
+      footprint: Connector_PinHeader_2.54mm:PinHeader_1x11_P2.54mm_Vertical
+      pin    1  Pin_1                -> GND
+      pin    2  Pin_2                -> GMAC0_MDIO
+      pin    3  Pin_3                -> GMAC0_MDCK
+      pin    4  Pin_4                -> GMAC0_TXCLK
+      pin    5  Pin_5                -> GMAC0_PHYCLK
+      pin    6  Pin_6                -> GMAC0_TXEN
+      pin    7  Pin_7                -> GMAC0_TXD0
+      pin    8  Pin_8                -> GMAC0_TXD1
+      pin    9  Pin_9                -> GMAC0_RXDV
+      pin   10  Pin_10               -> GMAC0_RXD0
+      pin   11  Pin_11               -> GMAC0_RXD1
+
+J21  (HDR_J21)
+      footprint: Connector_PinHeader_2.54mm:PinHeader_1x11_P2.54mm_Vertical
+      pin    1  Pin_1                -> GND
+      pin    2  Pin_2                -> GMAC1_MDIO
+      pin    3  Pin_3                -> GMAC1_MDCK
+      pin    4  Pin_4                -> GMAC1_TXCLK
+      pin    5  Pin_5                -> GMAC1_PHYCLK
+      pin    6  Pin_6                -> GMAC1_TXEN
+      pin    7  Pin_7                -> GMAC1_TXD0
+      pin    8  Pin_8                -> GMAC1_TXD1
+      pin    9  Pin_9                -> GMAC1_RXDV
+      pin   10  Pin_10               -> GMAC1_RXD0
+      pin   11  Pin_11               -> GMAC1_RXD1
+
+J22  (HDR_J22)
+      footprint: Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical
+      pin    1  Pin_1                -> GND
+      pin    2  Pin_2                -> UART0_RXD
+      pin    3  Pin_3                -> UART0_TXD
+      pin    4  Pin_4                -> UART0_CTS
+      pin    5  Pin_5                -> UART0_RTS
+
+J23  (HDR_J23)
+      footprint: Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical
+      pin    1  Pin_1                -> GND
+      pin    2  Pin_2                -> UART2_RXD
+      pin    3  Pin_3                -> UART2_TXD
+      pin    4  Pin_4                -> UART2_CTS
+      pin    5  Pin_5                -> UART2_RTS
+
+J24  (HDR_J24)
+      footprint: Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical
+      pin    1  Pin_1                -> GND
+      pin    2  Pin_2                -> UART3_RXD
+      pin    3  Pin_3                -> UART3_TXD
+      pin    4  Pin_4                -> UART3_CTS
+      pin    5  Pin_5                -> UART3_RTS
+
+J25  (HDR_J25)
+      footprint: Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical
+      pin    1  Pin_1                -> GND
+      pin    2  Pin_2                -> SSI0_CLK
+      pin    3  Pin_3                -> SSI0_DT
+      pin    4  Pin_4                -> SSI0_DR
+      pin    5  Pin_5                -> SSI0_CE0
+      pin    6  Pin_6                -> SSI0_CE1
+      pin    7  Pin_7                -> SSI0_GPC
+
+J26  (HDR_J26)
+      footprint: Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical
+      pin    1  Pin_1                -> GND
+      pin    2  Pin_2                -> SSI1_CLK
+      pin    3  Pin_3                -> SSI1_DT
+      pin    4  Pin_4                -> SSI1_DR
+      pin    5  Pin_5                -> SSI1_CE0
+
+J27  (HDR_J27)
+      footprint: Connector_PinHeader_2.54mm:PinHeader_1x09_P2.54mm_Vertical
+      pin    1  Pin_1                -> GND
+      pin    2  Pin_2                -> PWM0
+      pin    3  Pin_3                -> PWM1
+      pin    4  Pin_4                -> PWM2
+      pin    5  Pin_5                -> PWM3
+      pin    6  Pin_6                -> PWM4
+      pin    7  Pin_7                -> PWM5
+      pin    8  Pin_8                -> PWM6
+      pin    9  Pin_9                -> PWM7
+
+J28  (HDR_J28)
+      footprint: Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical
+      pin    1  Pin_1                -> GND
+      pin    2  Pin_2                -> SAR_AUX0
+
+J29  (HDR_J29)
+      footprint: Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical
+      pin    1  Pin_1                -> GND
+      pin    2  Pin_2                -> SMB0_SDA
+      pin    3  Pin_3                -> SMB0_SCK
+      pin    4  Pin_4                -> SMB1_SDA
+      pin    5  Pin_5                -> SMB1_SCK
+
+J30  (HDR_J30)
+      footprint: Connector_PinHeader_2.54mm:PinHeader_1x17_P2.54mm_Vertical
+      pin    1  Pin_1                -> GND
+      pin    2  Pin_2                -> GPIO0
+      pin    3  Pin_3                -> GPIO1
+      pin    4  Pin_4                -> GPIO2
+      pin    5  Pin_5                -> GPIO3
+      pin    6  Pin_6                -> GPIO4
+      pin    7  Pin_7                -> GPIO5
+      pin    8  Pin_8                -> GPIO6
+      pin    9  Pin_9                -> GPIO7
+      pin   10  Pin_10               -> GPIO8
+      pin   11  Pin_11               -> GPIO9
+      pin   12  Pin_12               -> GPIO10
+      pin   13  Pin_13               -> GPIO11
+      pin   14  Pin_14               -> GPIO12
+      pin   15  Pin_15               -> GPIO13
+      pin   16  Pin_16               -> GPIO14
+      pin   17  Pin_17               -> GPIO15
 
