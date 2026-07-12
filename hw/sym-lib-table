@@ -7,4 +7,5 @@
   (lib (name "power")(type "KiCad")(uri "/usr/share/kicad/symbols/power.kicad_sym")(options "")(descr "Power symbols"))
   (lib (name "Regulator_Linear")(type "KiCad")(uri "/usr/share/kicad/symbols/Regulator_Linear.kicad_sym")(options "")(descr "Linear regulators"))
   (lib (name "Connector_Audio")(type "KiCad")(uri "/usr/share/kicad/symbols/Connector_Audio.kicad_sym")(options "")(descr "Audio connectors"))
+  (lib (name "Connector_Generic")(type "KiCad")(uri "/usr/share/kicad/symbols/Connector_Generic.kicad_sym")(options "")(descr "Generic connectors, N-pin"))
 )

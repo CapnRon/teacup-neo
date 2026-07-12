@@ -5,3 +5,4 @@ _autosave-*
 fp-info-cache
 *.kicad_prl
 .~lock.*
+__pycache__/

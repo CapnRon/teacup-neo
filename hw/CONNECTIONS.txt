@@ -373,208 +373,208 @@ J1  (AH58893-T9B10-3F)
       pin   84  P84                  -> MIPI1_CLKP
       pin   85  P85                  -> GND
       pin   86  P86                  -> HOSTED_RESET
-      pin   87  P87                  -> RESERVED_P87
-      pin   88  P88                  -> RESERVED_P88
-      pin   89  P89                  -> RESERVED_P89
-      pin   90  P90                  -> RESERVED_P90
-      pin   91  P91                  -> RESERVED_P91
-      pin   92  P92                  -> RESERVED_P92
-      pin   93  P93                  -> RESERVED_P93
-      pin   94  P94                  -> RESERVED_P94
-      pin   95  P95                  -> RESERVED_P95
-      pin   96  P96                  -> RESERVED_P96
-      pin   97  P97                  -> (not connected)
-      pin   98  P98                  -> (not connected)
-      pin   99  P99                  -> (not connected)
-      pin  100  P100                 -> (not connected)
-      pin  101  P101                 -> (not connected)
-      pin  102  P102                 -> (not connected)
-      pin  103  P103                 -> (not connected)
-      pin  104  P104                 -> (not connected)
-      pin  105  P105                 -> (not connected)
-      pin  106  P106                 -> (not connected)
-      pin  107  P107                 -> (not connected)
-      pin  108  P108                 -> (not connected)
-      pin  109  P109                 -> (not connected)
-      pin  110  P110                 -> (not connected)
-      pin  111  P111                 -> (not connected)
-      pin  112  P112                 -> (not connected)
-      pin  113  P113                 -> (not connected)
-      pin  114  P114                 -> (not connected)
-      pin  115  P115                 -> (not connected)
-      pin  116  P116                 -> (not connected)
-      pin  117  P117                 -> (not connected)
-      pin  118  P118                 -> (not connected)
-      pin  119  P119                 -> (not connected)
-      pin  120  P120                 -> (not connected)
-      pin  121  P121                 -> (not connected)
-      pin  122  P122                 -> (not connected)
-      pin  123  P123                 -> (not connected)
-      pin  124  P124                 -> (not connected)
-      pin  125  P125                 -> (not connected)
-      pin  126  P126                 -> (not connected)
-      pin  127  P127                 -> (not connected)
-      pin  128  P128                 -> (not connected)
-      pin  129  P129                 -> (not connected)
-      pin  130  P130                 -> (not connected)
-      pin  131  P131                 -> (not connected)
-      pin  132  P132                 -> (not connected)
-      pin  133  P133                 -> (not connected)
-      pin  134  P134                 -> (not connected)
-      pin  135  P135                 -> (not connected)
-      pin  136  P136                 -> (not connected)
-      pin  137  P137                 -> (not connected)
-      pin  138  P138                 -> (not connected)
-      pin  139  P139                 -> (not connected)
-      pin  140  P140                 -> (not connected)
-      pin  141  P141                 -> (not connected)
-      pin  142  P142                 -> (not connected)
-      pin  143  P143                 -> (not connected)
-      pin  144  P144                 -> (not connected)
-      pin  145  P145                 -> (not connected)
-      pin  146  P146                 -> (not connected)
-      pin  147  P147                 -> (not connected)
-      pin  148  P148                 -> (not connected)
-      pin  149  P149                 -> (not connected)
-      pin  150  P150                 -> (not connected)
-      pin  151  P151                 -> (not connected)
-      pin  152  P152                 -> (not connected)
-      pin  153  P153                 -> (not connected)
-      pin  154  P154                 -> (not connected)
-      pin  155  P155                 -> (not connected)
-      pin  156  P156                 -> (not connected)
-      pin  157  P157                 -> (not connected)
-      pin  158  P158                 -> (not connected)
-      pin  159  P159                 -> (not connected)
-      pin  160  P160                 -> (not connected)
-      pin  161  P161                 -> (not connected)
-      pin  162  P162                 -> (not connected)
-      pin  163  P163                 -> (not connected)
-      pin  164  P164                 -> (not connected)
-      pin  165  P165                 -> (not connected)
-      pin  166  P166                 -> (not connected)
-      pin  167  P167                 -> (not connected)
-      pin  168  P168                 -> (not connected)
-      pin  169  P169                 -> (not connected)
-      pin  170  P170                 -> (not connected)
-      pin  171  P171                 -> (not connected)
-      pin  172  P172                 -> (not connected)
-      pin  173  P173                 -> (not connected)
-      pin  174  P174                 -> (not connected)
-      pin  175  P175                 -> (not connected)
-      pin  176  P176                 -> (not connected)
-      pin  177  P177                 -> (not connected)
-      pin  178  P178                 -> (not connected)
-      pin  179  P179                 -> (not connected)
-      pin  180  P180                 -> (not connected)
-      pin  181  P181                 -> (not connected)
-      pin  182  P182                 -> (not connected)
-      pin  183  P183                 -> (not connected)
-      pin  184  P184                 -> (not connected)
-      pin  185  P185                 -> (not connected)
-      pin  186  P186                 -> (not connected)
-      pin  187  P187                 -> (not connected)
-      pin  188  P188                 -> (not connected)
-      pin  189  P189                 -> (not connected)
-      pin  190  P190                 -> (not connected)
-      pin  191  P191                 -> (not connected)
-      pin  192  P192                 -> (not connected)
-      pin  193  P193                 -> (not connected)
-      pin  194  P194                 -> (not connected)
-      pin  195  P195                 -> (not connected)
-      pin  196  P196                 -> (not connected)
-      pin  197  P197                 -> (not connected)
-      pin  198  P198                 -> (not connected)
-      pin  199  P199                 -> (not connected)
-      pin  200  P200                 -> (not connected)
-      pin  201  P201                 -> (not connected)
-      pin  202  P202                 -> (not connected)
-      pin  203  P203                 -> (not connected)
-      pin  204  P204                 -> (not connected)
-      pin  205  P205                 -> (not connected)
-      pin  206  P206                 -> (not connected)
-      pin  207  P207                 -> (not connected)
-      pin  208  P208                 -> (not connected)
-      pin  209  P209                 -> (not connected)
-      pin  210  P210                 -> (not connected)
-      pin  211  P211                 -> (not connected)
-      pin  212  P212                 -> (not connected)
-      pin  213  P213                 -> (not connected)
-      pin  214  P214                 -> (not connected)
-      pin  215  P215                 -> (not connected)
-      pin  216  P216                 -> (not connected)
-      pin  217  P217                 -> (not connected)
-      pin  218  P218                 -> (not connected)
-      pin  219  P219                 -> (not connected)
-      pin  220  P220                 -> (not connected)
-      pin  221  P221                 -> (not connected)
-      pin  222  P222                 -> (not connected)
-      pin  223  P223                 -> (not connected)
-      pin  224  P224                 -> (not connected)
-      pin  225  P225                 -> (not connected)
-      pin  226  P226                 -> (not connected)
-      pin  227  P227                 -> (not connected)
-      pin  228  P228                 -> (not connected)
-      pin  229  P229                 -> (not connected)
-      pin  230  P230                 -> (not connected)
-      pin  231  P231                 -> (not connected)
-      pin  232  P232                 -> (not connected)
-      pin  233  P233                 -> (not connected)
-      pin  234  P234                 -> (not connected)
-      pin  235  P235                 -> (not connected)
-      pin  236  P236                 -> (not connected)
-      pin  237  P237                 -> (not connected)
-      pin  238  P238                 -> (not connected)
-      pin  239  P239                 -> (not connected)
-      pin  240  P240                 -> (not connected)
-      pin  241  P241                 -> (not connected)
-      pin  242  P242                 -> (not connected)
-      pin  243  P243                 -> (not connected)
-      pin  244  P244                 -> (not connected)
-      pin  245  P245                 -> (not connected)
-      pin  246  P246                 -> (not connected)
-      pin  247  P247                 -> (not connected)
-      pin  248  P248                 -> (not connected)
-      pin  249  P249                 -> (not connected)
-      pin  250  P250                 -> (not connected)
-      pin  251  P251                 -> (not connected)
-      pin  252  P252                 -> (not connected)
-      pin  253  P253                 -> (not connected)
-      pin  254  P254                 -> (not connected)
-      pin  255  P255                 -> (not connected)
-      pin  256  P256                 -> (not connected)
-      pin  257  P257                 -> (not connected)
-      pin  258  P258                 -> (not connected)
-      pin  259  P259                 -> (not connected)
-      pin  260  P260                 -> (not connected)
-      pin  261  P261                 -> (not connected)
-      pin  262  P262                 -> (not connected)
-      pin  263  P263                 -> (not connected)
-      pin  264  P264                 -> (not connected)
-      pin  265  P265                 -> (not connected)
-      pin  266  P266                 -> (not connected)
-      pin  267  P267                 -> (not connected)
-      pin  268  P268                 -> (not connected)
-      pin  269  P269                 -> (not connected)
-      pin  270  P270                 -> (not connected)
-      pin  271  P271                 -> (not connected)
-      pin  272  P272                 -> (not connected)
-      pin  273  P273                 -> (not connected)
-      pin  274  P274                 -> (not connected)
-      pin  275  P275                 -> (not connected)
-      pin  276  P276                 -> (not connected)
-      pin  277  P277                 -> (not connected)
-      pin  278  P278                 -> (not connected)
-      pin  279  P279                 -> (not connected)
-      pin  280  P280                 -> (not connected)
-      pin  281  P281                 -> (not connected)
-      pin  282  P282                 -> (not connected)
-      pin  283  P283                 -> (not connected)
-      pin  284  P284                 -> (not connected)
-      pin  285  P285                 -> (not connected)
-      pin  286  P286                 -> (not connected)
-      pin  287  P287                 -> (not connected)
-      pin  288  P288                 -> (not connected)
+      pin   87  P87                  -> GMAC0_MDIO
+      pin   88  P88                  -> GMAC0_MDCK
+      pin   89  P89                  -> GMAC0_TXCLK
+      pin   90  P90                  -> GMAC0_PHYCLK
+      pin   91  P91                  -> GMAC0_TXEN
+      pin   92  P92                  -> GMAC0_TXD0
+      pin   93  P93                  -> GMAC0_TXD1
+      pin   94  P94                  -> GMAC0_RXDV
+      pin   95  P95                  -> GMAC0_RXD0
+      pin   96  P96                  -> GMAC0_RXD1
+      pin   97  P97                  -> GND
+      pin   98  P98                  -> UART0_RXD
+      pin   99  P99                  -> UART0_TXD
+      pin  100  P100                 -> UART0_CTS
+      pin  101  P101                 -> UART0_RTS
+      pin  102  P102                 -> GND
+      pin  103  P103                 -> UART2_RXD
+      pin  104  P104                 -> UART2_TXD
+      pin  105  P105                 -> UART2_CTS
+      pin  106  P106                 -> UART2_RTS
+      pin  107  P107                 -> GND
+      pin  108  P108                 -> UART3_RXD
+      pin  109  P109                 -> UART3_TXD
+      pin  110  P110                 -> UART3_CTS
+      pin  111  P111                 -> UART3_RTS
+      pin  112  P112                 -> GND
+      pin  113  P113                 -> GMAC1_MDIO
+      pin  114  P114                 -> GMAC1_MDCK
+      pin  115  P115                 -> GMAC1_TXCLK
+      pin  116  P116                 -> GMAC1_PHYCLK
+      pin  117  P117                 -> GMAC1_TXEN
+      pin  118  P118                 -> GMAC1_TXD0
+      pin  119  P119                 -> GMAC1_TXD1
+      pin  120  P120                 -> GMAC1_RXDV
+      pin  121  P121                 -> GMAC1_RXD0
+      pin  122  P122                 -> GMAC1_RXD1
+      pin  123  P123                 -> GND
+      pin  124  P124                 -> SSI0_CLK
+      pin  125  P125                 -> SSI0_DT
+      pin  126  P126                 -> SSI0_DR
+      pin  127  P127                 -> SSI0_CE0
+      pin  128  P128                 -> SSI0_CE1
+      pin  129  P129                 -> SSI0_GPC
+      pin  130  P130                 -> GND
+      pin  131  P131                 -> SSI1_CLK
+      pin  132  P132                 -> SSI1_DT
+      pin  133  P133                 -> SSI1_DR
+      pin  134  P134                 -> SSI1_CE0
+      pin  135  P135                 -> GND
+      pin  136  P136                 -> PWM0
+      pin  137  P137                 -> PWM1
+      pin  138  P138                 -> PWM2
+      pin  139  P139                 -> PWM3
+      pin  140  P140                 -> PWM4
+      pin  141  P141                 -> PWM5
+      pin  142  P142                 -> PWM6
+      pin  143  P143                 -> PWM7
+      pin  144  P144                 -> GND
+      pin  145  P145                 -> GND
+      pin  146  P146                 -> SAR_AUX0
+      pin  147  P147                 -> GND
+      pin  148  P148                 -> SMB0_SDA
+      pin  149  P149                 -> SMB0_SCK
+      pin  150  P150                 -> SMB1_SDA
+      pin  151  P151                 -> SMB1_SCK
+      pin  152  P152                 -> GND
+      pin  153  P153                 -> GPIO0
+      pin  154  P154                 -> GPIO1
+      pin  155  P155                 -> GPIO2
+      pin  156  P156                 -> GPIO3
+      pin  157  P157                 -> GPIO4
+      pin  158  P158                 -> GPIO5
+      pin  159  P159                 -> GPIO6
+      pin  160  P160                 -> GPIO7
+      pin  161  P161                 -> GPIO8
+      pin  162  P162                 -> GPIO9
+      pin  163  P163                 -> GPIO10
+      pin  164  P164                 -> GPIO11
+      pin  165  P165                 -> GPIO12
+      pin  166  P166                 -> GPIO13
+      pin  167  P167                 -> GPIO14
+      pin  168  P168                 -> GPIO15
+      pin  169  P169                 -> GND
+      pin  170  P170                 -> SPARE_P170
+      pin  171  P171                 -> SPARE_P171
+      pin  172  P172                 -> SPARE_P172
+      pin  173  P173                 -> SPARE_P173
+      pin  174  P174                 -> SPARE_P174
+      pin  175  P175                 -> SPARE_P175
+      pin  176  P176                 -> SPARE_P176
+      pin  177  P177                 -> SPARE_P177
+      pin  178  P178                 -> SPARE_P178
+      pin  179  P179                 -> SPARE_P179
+      pin  180  P180                 -> SPARE_P180
+      pin  181  P181                 -> SPARE_P181
+      pin  182  P182                 -> SPARE_P182
+      pin  183  P183                 -> SPARE_P183
+      pin  184  P184                 -> SPARE_P184
+      pin  185  P185                 -> SPARE_P185
+      pin  186  P186                 -> SPARE_P186
+      pin  187  P187                 -> SPARE_P187
+      pin  188  P188                 -> SPARE_P188
+      pin  189  P189                 -> SPARE_P189
+      pin  190  P190                 -> SPARE_P190
+      pin  191  P191                 -> SPARE_P191
+      pin  192  P192                 -> SPARE_P192
+      pin  193  P193                 -> SPARE_P193
+      pin  194  P194                 -> SPARE_P194
+      pin  195  P195                 -> SPARE_P195
+      pin  196  P196                 -> SPARE_P196
+      pin  197  P197                 -> SPARE_P197
+      pin  198  P198                 -> SPARE_P198
+      pin  199  P199                 -> SPARE_P199
+      pin  200  P200                 -> SPARE_P200
+      pin  201  P201                 -> SPARE_P201
+      pin  202  P202                 -> SPARE_P202
+      pin  203  P203                 -> SPARE_P203
+      pin  204  P204                 -> SPARE_P204
+      pin  205  P205                 -> SPARE_P205
+      pin  206  P206                 -> SPARE_P206
+      pin  207  P207                 -> SPARE_P207
+      pin  208  P208                 -> SPARE_P208
+      pin  209  P209                 -> SPARE_P209
+      pin  210  P210                 -> SPARE_P210
+      pin  211  P211                 -> SPARE_P211
+      pin  212  P212                 -> SPARE_P212
+      pin  213  P213                 -> SPARE_P213
+      pin  214  P214                 -> SPARE_P214
+      pin  215  P215                 -> SPARE_P215
+      pin  216  P216                 -> SPARE_P216
+      pin  217  P217                 -> SPARE_P217
+      pin  218  P218                 -> SPARE_P218
+      pin  219  P219                 -> SPARE_P219
+      pin  220  P220                 -> SPARE_P220
+      pin  221  P221                 -> SPARE_P221
+      pin  222  P222                 -> SPARE_P222
+      pin  223  P223                 -> SPARE_P223
+      pin  224  P224                 -> SPARE_P224
+      pin  225  P225                 -> SPARE_P225
+      pin  226  P226                 -> SPARE_P226
+      pin  227  P227                 -> SPARE_P227
+      pin  228  P228                 -> SPARE_P228
+      pin  229  P229                 -> SPARE_P229
+      pin  230  P230                 -> SPARE_P230
+      pin  231  P231                 -> SPARE_P231
+      pin  232  P232                 -> SPARE_P232
+      pin  233  P233                 -> SPARE_P233
+      pin  234  P234                 -> SPARE_P234
+      pin  235  P235                 -> SPARE_P235
+      pin  236  P236                 -> SPARE_P236
+      pin  237  P237                 -> SPARE_P237
+      pin  238  P238                 -> SPARE_P238
+      pin  239  P239                 -> SPARE_P239
+      pin  240  P240                 -> SPARE_P240
+      pin  241  P241                 -> SPARE_P241
+      pin  242  P242                 -> SPARE_P242
+      pin  243  P243                 -> SPARE_P243
+      pin  244  P244                 -> SPARE_P244
+      pin  245  P245                 -> SPARE_P245
+      pin  246  P246                 -> SPARE_P246
+      pin  247  P247                 -> SPARE_P247
+      pin  248  P248                 -> SPARE_P248
+      pin  249  P249                 -> SPARE_P249
+      pin  250  P250                 -> SPARE_P250
+      pin  251  P251                 -> SPARE_P251
+      pin  252  P252                 -> SPARE_P252
+      pin  253  P253                 -> SPARE_P253
+      pin  254  P254                 -> SPARE_P254
+      pin  255  P255                 -> SPARE_P255
+      pin  256  P256                 -> SPARE_P256
+      pin  257  P257                 -> SPARE_P257
+      pin  258  P258                 -> SPARE_P258
+      pin  259  P259                 -> SPARE_P259
+      pin  260  P260                 -> SPARE_P260
+      pin  261  P261                 -> SPARE_P261
+      pin  262  P262                 -> SPARE_P262
+      pin  263  P263                 -> SPARE_P263
+      pin  264  P264                 -> SPARE_P264
+      pin  265  P265                 -> SPARE_P265
+      pin  266  P266                 -> SPARE_P266
+      pin  267  P267                 -> SPARE_P267
+      pin  268  P268                 -> SPARE_P268
+      pin  269  P269                 -> SPARE_P269
+      pin  270  P270                 -> SPARE_P270
+      pin  271  P271                 -> SPARE_P271
+      pin  272  P272                 -> SPARE_P272
+      pin  273  P273                 -> SPARE_P273
+      pin  274  P274                 -> SPARE_P274
+      pin  275  P275                 -> SPARE_P275
+      pin  276  P276                 -> SPARE_P276
+      pin  277  P277                 -> SPARE_P277
+      pin  278  P278                 -> SPARE_P278
+      pin  279  P279                 -> SPARE_P279
+      pin  280  P280                 -> SPARE_P280
+      pin  281  P281                 -> SPARE_P281
+      pin  282  P282                 -> SPARE_P282
+      pin  283  P283                 -> SPARE_P283
+      pin  284  P284                 -> SPARE_P284
+      pin  285  P285                 -> SPARE_P285
+      pin  286  P286                 -> SPARE_P286
+      pin  287  P287                 -> SPARE_P287
+      pin  288  P288                 -> SPARE_P288
 
 ### BMC - ESP32-S3
 --------------------------------------------------------------------------------
@@ -928,4 +928,261 @@ R19  (5.1k)
       footprint: Resistor_SMD:R_0402_1005Metric
       pin    1                       -> USBC2_CC2
       pin    2                       -> GND
+
+### PIN BREAKOUT HEADERS
+--------------------------------------------------------------------------------
+
+J20  (HDR_J20)
+      footprint: Connector_PinHeader_2.54mm:PinHeader_1x11_P2.54mm_Vertical
+      pin    1  Pin_1                -> GND
+      pin    2  Pin_2                -> GMAC0_MDIO
+      pin    3  Pin_3                -> GMAC0_MDCK
+      pin    4  Pin_4                -> GMAC0_TXCLK
+      pin    5  Pin_5                -> GMAC0_PHYCLK
+      pin    6  Pin_6                -> GMAC0_TXEN
+      pin    7  Pin_7                -> GMAC0_TXD0
+      pin    8  Pin_8                -> GMAC0_TXD1
+      pin    9  Pin_9                -> GMAC0_RXDV
+      pin   10  Pin_10               -> GMAC0_RXD0
+      pin   11  Pin_11               -> GMAC0_RXD1
+
+J21  (HDR_J21)
+      footprint: Connector_PinHeader_2.54mm:PinHeader_1x11_P2.54mm_Vertical
+      pin    1  Pin_1                -> GND
+      pin    2  Pin_2                -> GMAC1_MDIO
+      pin    3  Pin_3                -> GMAC1_MDCK
+      pin    4  Pin_4                -> GMAC1_TXCLK
+      pin    5  Pin_5                -> GMAC1_PHYCLK
+      pin    6  Pin_6                -> GMAC1_TXEN
+      pin    7  Pin_7                -> GMAC1_TXD0
+      pin    8  Pin_8                -> GMAC1_TXD1
+      pin    9  Pin_9                -> GMAC1_RXDV
+      pin   10  Pin_10               -> GMAC1_RXD0
+      pin   11  Pin_11               -> GMAC1_RXD1
+
+J22  (HDR_J22)
+      footprint: Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical
+      pin    1  Pin_1                -> GND
+      pin    2  Pin_2                -> UART0_RXD
+      pin    3  Pin_3                -> UART0_TXD
+      pin    4  Pin_4                -> UART0_CTS
+      pin    5  Pin_5                -> UART0_RTS
+
+J23  (HDR_J23)
+      footprint: Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical
+      pin    1  Pin_1                -> GND
+      pin    2  Pin_2                -> UART2_RXD
+      pin    3  Pin_3                -> UART2_TXD
+      pin    4  Pin_4                -> UART2_CTS
+      pin    5  Pin_5                -> UART2_RTS
+
+J24  (HDR_J24)
+      footprint: Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical
+      pin    1  Pin_1                -> GND
+      pin    2  Pin_2                -> UART3_RXD
+      pin    3  Pin_3                -> UART3_TXD
+      pin    4  Pin_4                -> UART3_CTS
+      pin    5  Pin_5                -> UART3_RTS
+
+J25  (HDR_J25)
+      footprint: Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical
+      pin    1  Pin_1                -> GND
+      pin    2  Pin_2                -> SSI0_CLK
+      pin    3  Pin_3                -> SSI0_DT
+      pin    4  Pin_4                -> SSI0_DR
+      pin    5  Pin_5                -> SSI0_CE0
+      pin    6  Pin_6                -> SSI0_CE1
+      pin    7  Pin_7                -> SSI0_GPC
+
+J26  (HDR_J26)
+      footprint: Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical
+      pin    1  Pin_1                -> GND
+      pin    2  Pin_2                -> SSI1_CLK
+      pin    3  Pin_3                -> SSI1_DT
+      pin    4  Pin_4                -> SSI1_DR
+      pin    5  Pin_5                -> SSI1_CE0
+
+J27  (HDR_J27)
+      footprint: Connector_PinHeader_2.54mm:PinHeader_1x09_P2.54mm_Vertical
+      pin    1  Pin_1                -> GND
+      pin    2  Pin_2                -> PWM0
+      pin    3  Pin_3                -> PWM1
+      pin    4  Pin_4                -> PWM2
+      pin    5  Pin_5                -> PWM3
+      pin    6  Pin_6                -> PWM4
+      pin    7  Pin_7                -> PWM5
+      pin    8  Pin_8                -> PWM6
+      pin    9  Pin_9                -> PWM7
+
+J28  (HDR_J28)
+      footprint: Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical
+      pin    1  Pin_1                -> GND
+      pin    2  Pin_2                -> SAR_AUX0
+
+J29  (HDR_J29)
+      footprint: Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical
+      pin    1  Pin_1                -> GND
+      pin    2  Pin_2                -> SMB0_SDA
+      pin    3  Pin_3                -> SMB0_SCK
+      pin    4  Pin_4                -> SMB1_SDA
+      pin    5  Pin_5                -> SMB1_SCK
+
+J30  (HDR_J30)
+      footprint: Connector_PinHeader_2.54mm:PinHeader_1x17_P2.54mm_Vertical
+      pin    1  Pin_1                -> GND
+      pin    2  Pin_2                -> GPIO0
+      pin    3  Pin_3                -> GPIO1
+      pin    4  Pin_4                -> GPIO2
+      pin    5  Pin_5                -> GPIO3
+      pin    6  Pin_6                -> GPIO4
+      pin    7  Pin_7                -> GPIO5
+      pin    8  Pin_8                -> GPIO6
+      pin    9  Pin_9                -> GPIO7
+      pin   10  Pin_10               -> GPIO8
+      pin   11  Pin_11               -> GPIO9
+      pin   12  Pin_12               -> GPIO10
+      pin   13  Pin_13               -> GPIO11
+      pin   14  Pin_14               -> GPIO12
+      pin   15  Pin_15               -> GPIO13
+      pin   16  Pin_16               -> GPIO14
+      pin   17  Pin_17               -> GPIO15
+
+J31  (HDR_J31)
+      footprint: Connector_PinHeader_2.54mm:PinHeader_1x24_P2.54mm_Vertical
+      pin    1  Pin_1                -> GND
+      pin    2  Pin_2                -> SPARE_P170
+      pin    3  Pin_3                -> SPARE_P171
+      pin    4  Pin_4                -> SPARE_P172
+      pin    5  Pin_5                -> SPARE_P173
+      pin    6  Pin_6                -> SPARE_P174
+      pin    7  Pin_7                -> SPARE_P175
+      pin    8  Pin_8                -> SPARE_P176
+      pin    9  Pin_9                -> SPARE_P177
+      pin   10  Pin_10               -> SPARE_P178
+      pin   11  Pin_11               -> SPARE_P179
+      pin   12  Pin_12               -> SPARE_P180
+      pin   13  Pin_13               -> SPARE_P181
+      pin   14  Pin_14               -> SPARE_P182
+      pin   15  Pin_15               -> SPARE_P183
+      pin   16  Pin_16               -> SPARE_P184
+      pin   17  Pin_17               -> SPARE_P185
+      pin   18  Pin_18               -> SPARE_P186
+      pin   19  Pin_19               -> SPARE_P187
+      pin   20  Pin_20               -> SPARE_P188
+      pin   21  Pin_21               -> SPARE_P189
+      pin   22  Pin_22               -> SPARE_P190
+      pin   23  Pin_23               -> SPARE_P191
+      pin   24  Pin_24               -> SPARE_P192
+
+J32  (HDR_J32)
+      footprint: Connector_PinHeader_2.54mm:PinHeader_1x25_P2.54mm_Vertical
+      pin    1  Pin_1                -> GND
+      pin    2  Pin_2                -> SPARE_P193
+      pin    3  Pin_3                -> SPARE_P194
+      pin    4  Pin_4                -> SPARE_P195
+      pin    5  Pin_5                -> SPARE_P196
+      pin    6  Pin_6                -> SPARE_P197
+      pin    7  Pin_7                -> SPARE_P198
+      pin    8  Pin_8                -> SPARE_P199
+      pin    9  Pin_9                -> SPARE_P200
+      pin   10  Pin_10               -> SPARE_P201
+      pin   11  Pin_11               -> SPARE_P202
+      pin   12  Pin_12               -> SPARE_P203
+      pin   13  Pin_13               -> SPARE_P204
+      pin   14  Pin_14               -> SPARE_P205
+      pin   15  Pin_15               -> SPARE_P206
+      pin   16  Pin_16               -> SPARE_P207
+      pin   17  Pin_17               -> SPARE_P208
+      pin   18  Pin_18               -> SPARE_P209
+      pin   19  Pin_19               -> SPARE_P210
+      pin   20  Pin_20               -> SPARE_P211
+      pin   21  Pin_21               -> SPARE_P212
+      pin   22  Pin_22               -> SPARE_P213
+      pin   23  Pin_23               -> SPARE_P214
+      pin   24  Pin_24               -> SPARE_P215
+      pin   25  Pin_25               -> SPARE_P216
+
+J33  (HDR_J33)
+      footprint: Connector_PinHeader_2.54mm:PinHeader_1x25_P2.54mm_Vertical
+      pin    1  Pin_1                -> GND
+      pin    2  Pin_2                -> SPARE_P217
+      pin    3  Pin_3                -> SPARE_P218
+      pin    4  Pin_4                -> SPARE_P219
+      pin    5  Pin_5                -> SPARE_P220
+      pin    6  Pin_6                -> SPARE_P221
+      pin    7  Pin_7                -> SPARE_P222
+      pin    8  Pin_8                -> SPARE_P223
+      pin    9  Pin_9                -> SPARE_P224
+      pin   10  Pin_10               -> SPARE_P225
+      pin   11  Pin_11               -> SPARE_P226
+      pin   12  Pin_12               -> SPARE_P227
+      pin   13  Pin_13               -> SPARE_P228
+      pin   14  Pin_14               -> SPARE_P229
+      pin   15  Pin_15               -> SPARE_P230
+      pin   16  Pin_16               -> SPARE_P231
+      pin   17  Pin_17               -> SPARE_P232
+      pin   18  Pin_18               -> SPARE_P233
+      pin   19  Pin_19               -> SPARE_P234
+      pin   20  Pin_20               -> SPARE_P235
+      pin   21  Pin_21               -> SPARE_P236
+      pin   22  Pin_22               -> SPARE_P237
+      pin   23  Pin_23               -> SPARE_P238
+      pin   24  Pin_24               -> SPARE_P239
+      pin   25  Pin_25               -> SPARE_P240
+
+J34  (HDR_J34)
+      footprint: Connector_PinHeader_2.54mm:PinHeader_1x25_P2.54mm_Vertical
+      pin    1  Pin_1                -> GND
+      pin    2  Pin_2                -> SPARE_P241
+      pin    3  Pin_3                -> SPARE_P242
+      pin    4  Pin_4                -> SPARE_P243
+      pin    5  Pin_5                -> SPARE_P244
+      pin    6  Pin_6                -> SPARE_P245
+      pin    7  Pin_7                -> SPARE_P246
+      pin    8  Pin_8                -> SPARE_P247
+      pin    9  Pin_9                -> SPARE_P248
+      pin   10  Pin_10               -> SPARE_P249
+      pin   11  Pin_11               -> SPARE_P250
+      pin   12  Pin_12               -> SPARE_P251
+      pin   13  Pin_13               -> SPARE_P252
+      pin   14  Pin_14               -> SPARE_P253
+      pin   15  Pin_15               -> SPARE_P254
+      pin   16  Pin_16               -> SPARE_P255
+      pin   17  Pin_17               -> SPARE_P256
+      pin   18  Pin_18               -> SPARE_P257
+      pin   19  Pin_19               -> SPARE_P258
+      pin   20  Pin_20               -> SPARE_P259
+      pin   21  Pin_21               -> SPARE_P260
+      pin   22  Pin_22               -> SPARE_P261
+      pin   23  Pin_23               -> SPARE_P262
+      pin   24  Pin_24               -> SPARE_P263
+      pin   25  Pin_25               -> SPARE_P264
+
+J35  (HDR_J35)
+      footprint: Connector_PinHeader_2.54mm:PinHeader_1x25_P2.54mm_Vertical
+      pin    1  Pin_1                -> GND
+      pin    2  Pin_2                -> SPARE_P265
+      pin    3  Pin_3                -> SPARE_P266
+      pin    4  Pin_4                -> SPARE_P267
+      pin    5  Pin_5                -> SPARE_P268
+      pin    6  Pin_6                -> SPARE_P269
+      pin    7  Pin_7                -> SPARE_P270
+      pin    8  Pin_8                -> SPARE_P271
+      pin    9  Pin_9                -> SPARE_P272
+      pin   10  Pin_10               -> SPARE_P273
+      pin   11  Pin_11               -> SPARE_P274
+      pin   12  Pin_12               -> SPARE_P275
+      pin   13  Pin_13               -> SPARE_P276
+      pin   14  Pin_14               -> SPARE_P277
+      pin   15  Pin_15               -> SPARE_P278
+      pin   16  Pin_16               -> SPARE_P279
+      pin   17  Pin_17               -> SPARE_P280
+      pin   18  Pin_18               -> SPARE_P281
+      pin   19  Pin_19               -> SPARE_P282
+      pin   20  Pin_20               -> SPARE_P283
+      pin   21  Pin_21               -> SPARE_P284
+      pin   22  Pin_22               -> SPARE_P285
+      pin   23  Pin_23               -> SPARE_P286
+      pin   24  Pin_24               -> SPARE_P287
+      pin   25  Pin_25               -> SPARE_P288
 
