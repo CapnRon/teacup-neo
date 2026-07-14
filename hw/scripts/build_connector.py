@@ -235,13 +235,21 @@ for num, spec in UNIT4.items():
     unit_pin(u4x, u4y, 4, num, spec)
 
 # ============ Units 5-6 (pins 193-288): spare breakout, all SPARE_P<n> ============
+# P283-288 claimed for MSC1 (a second SD/MMC controller, same 6-signal
+# 4-bit structure MSC0 already uses: CLK/CMD/D0/D1/D2/D3_CD) -- carved out
+# of the tail end of the spare range the same way HPOUTL/MICLP were carved
+# out of P170-172 earlier, per explicit user direction, 2026-07-14.
+MSC1_TAIL = {
+    283: "MSC1_CLK", 284: "MSC1_CMD", 285: "MSC1_D0",
+    286: "MSC1_D1", 287: "MSC1_D2", 288: "MSC1_D3_CD",
+}
 positions = [(S(110), S(130)), (S(180), S(130))]
 for i, (ux, uy) in enumerate(positions, start=5):
     s.place(CONN, "J1", "AH58893-T9B10-3F", ux, uy, 0, unit=i,
             ref_at=(ux, uy - S(26), 0), value_at=(ux, uy + S(26), 0))
     lo = 193 + (i - 5) * 48
     for p in range(lo, lo + 48):
-        unit_pin(ux, uy, i, p, f"SPARE_P{p}")
+        unit_pin(ux, uy, i, p, MSC1_TAIL.get(p, f"SPARE_P{p}"))
 
 out = s.render("DDR4 UDIMM-288 Connector", str(uuid.uuid4()), "/016abe51-c097-4611-854e-0af763646499", "3", paper="A3")
 open("/home/administrator/projects/teacup-neo/hw/sheets/connector.kicad_sch", "w").write(out)

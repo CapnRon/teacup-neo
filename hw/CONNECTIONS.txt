@@ -694,12 +694,12 @@ J1  (AH58893-T9B10-3F)
       pin  280  P280                 -> SPARE_P280
       pin  281  P281                 -> SPARE_P281
       pin  282  P282                 -> SPARE_P282
-      pin  283  P283                 -> SPARE_P283
-      pin  284  P284                 -> SPARE_P284
-      pin  285  P285                 -> SPARE_P285
-      pin  286  P286                 -> SPARE_P286
-      pin  287  P287                 -> SPARE_P287
-      pin  288  P288                 -> SPARE_P288
+      pin  283  P283                 -> MSC1_CLK
+      pin  284  P284                 -> MSC1_CMD
+      pin  285  P285                 -> MSC1_D0
+      pin  286  P286                 -> MSC1_D1
+      pin  287  P287                 -> MSC1_D2
+      pin  288  P288                 -> MSC1_D3_CD
 
 ### BMC - ESP32-S3
 --------------------------------------------------------------------------------
@@ -1037,6 +1037,12 @@ J9  (TYPE-C-31-M-12)
       pin   B9  VBUS                 -> +5V_BMC
       pin   S1  SHIELD               -> GND
 
+J38  (AMP_MIC_TAP)
+      footprint: Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical
+      pin    1  Pin_1                -> HPOUTL
+      pin    2  Pin_2                -> GND
+      pin    3  Pin_3                -> MICLP
+
 JP11  (EN_SEL)
       footprint: Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical_SMD_Pin1Left
       pin    1  Pin_1                -> MIPI0_GPIO
@@ -1357,12 +1363,12 @@ J35  (HDR_J35)
       pin   17  Pin_17               -> SPARE_P280
       pin   18  Pin_18               -> SPARE_P281
       pin   19  Pin_19               -> SPARE_P282
-      pin   20  Pin_20               -> SPARE_P283
-      pin   21  Pin_21               -> SPARE_P284
-      pin   22  Pin_22               -> SPARE_P285
-      pin   23  Pin_23               -> SPARE_P286
-      pin   24  Pin_24               -> SPARE_P287
-      pin   25  Pin_25               -> SPARE_P288
+      pin   20  Pin_20               -> GND
+      pin   21  Pin_21               -> GND
+      pin   22  Pin_22               -> GND
+      pin   23  Pin_23               -> GND
+      pin   24  Pin_24               -> GND
+      pin   25  Pin_25               -> GND
       pin   26  Pin_26               -> GND
 
 J36  (HDR_J36)
@@ -1370,4 +1376,14 @@ J36  (HDR_J36)
       pin    1  Pin_1                -> GND
       pin    2  Pin_2                -> UART1_RX
       pin    3  Pin_3                -> UART1_TX
+
+J37  (HDR_J37)
+      footprint: Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical
+      pin    1  Pin_1                -> GND
+      pin    2  Pin_2                -> MSC1_CLK
+      pin    3  Pin_3                -> MSC1_CMD
+      pin    4  Pin_4                -> MSC1_D0
+      pin    5  Pin_5                -> MSC1_D1
+      pin    6  Pin_6                -> MSC1_D2
+      pin    7  Pin_7                -> MSC1_D3_CD
 
