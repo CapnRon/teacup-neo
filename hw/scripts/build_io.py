@@ -246,6 +246,25 @@ ic_pins(J6, j6x, j6y, {
     "S": "MICLP",
 })
 
+# ============ External amplifier/mic tap (J38) ============
+# 3-pin header (HPOUTL, GND, MICLP) tapping the same three audio signals
+# J6 carries, in parallel with the jack itself, so an external amplifier
+# AND an external mic can both be wired in directly instead of needing a
+# breakout cable off J6. GND placed in the middle (rather than at the
+# header's own pin 1/end) so it doubles as a physical isolation strip
+# between the two signal pins. Per explicit user direction, 2026-07-14.
+J38_GEN = "/usr/share/kicad/symbols/Connector_Generic.kicad_sym"
+s.ensure_symbol(J38_GEN, "Conn_01x03", "Connector_Generic:Conn_01x03")
+j38x, j38y = j6x + S(30), j6y
+s.place("Connector_Generic:Conn_01x03", "J38", "AMP_MIC_TAP", j38x, j38y, 0,
+        footprint="Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical",
+        ref_at=(j38x + S(4), j38y - S(2), 0), value_at=(j38x + S(4), j38y + S(2), 0))
+ic_pins("Connector_Generic:Conn_01x03", j38x, j38y, {
+    "1": "HPOUTL",
+    "2": GNDF,
+    "3": "MICLP",
+})
+
 # ============ MIPI CSI FFC connectors (J7/J8) ============
 # Physical pin-for-pin match to TeaCup(C)3.3's real J13 FFC connector --
 # verified directly against 3.3's own PCB netlist (12-30-23-Teacup.kicad_pcb-

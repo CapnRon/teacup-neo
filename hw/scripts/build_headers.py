@@ -52,6 +52,11 @@ CLUSTERS = [
     # externally, same as UART0/2/3. TX/RX only (no CTS/RTS exist on this
     # link -- it's a plain 2-wire console UART, not flow-controlled).
     ("J36", "UART1 (BMC console)", ["UART1_RX", "UART1_TX"]),
+    # MSC1 -- second SD/MMC controller, same 6-signal 4-bit structure MSC0
+    # already uses. Carved out of J1 pins 283-288 (the tail of the old
+    # SPARE5/J35 range, see build_connector.py) rather than assigned real
+    # estate of its own -- per explicit user direction, 2026-07-14.
+    ("J37", "MSC1", ["MSC1_CLK", "MSC1_CMD", "MSC1_D0", "MSC1_D1", "MSC1_D2", "MSC1_D3_CD"]),
     ("J26", "SSI1", ["SSI1_CLK", "SSI1_DT", "SSI1_DR", "SSI1_CE0"]),
     ("J28", "SAR-ADC", ["SAR_AUX0"]),
     ("J29", "SMB0/SMB1 (general I2C)", ["SMB0_SDA", "SMB0_SCK", "SMB1_SDA", "SMB1_SCK"]),
@@ -72,7 +77,9 @@ SPARE_CLUSTERS = [
     ("J32", "J1 SPARE (P193-216)", [f"SPARE_P{p}" for p in range(193, 217)]),
     ("J33", "J1 SPARE (P217-240)", [f"SPARE_P{p}" for p in range(217, 241)]),
     ("J34", "J1 SPARE (P241-264)", [f"SPARE_P{p}" for p in range(241, 265)]),
-    ("J35", "J1 SPARE (P265-288)", [f"SPARE_P{p}" for p in range(265, 289)]),
+    # P283-288 claimed for MSC1 (see build_connector.py and the J37 cluster
+    # below) -- excluded here same as every other named signal.
+    ("J35", "J1 SPARE (P265-282)", [f"SPARE_P{p}" for p in range(265, 283)]),
 ]
 
 COLA_X = S(40)
@@ -83,7 +90,7 @@ COL_X = {"A": COLA_X, "B": COLB_X, "C": COLC_X, "D": COLD_X}
 COL_ORDER = {"J20": "A", "J21": "A", "J25": "A", "J27": "A", "J30": "A",
              "J22": "B", "J23": "B", "J24": "B", "J26": "B", "J28": "B", "J29": "B", "J36": "B",
              "J31": "C", "J32": "C", "J33": "C",
-             "J34": "D", "J35": "D"}
+             "J34": "D", "J35": "D", "J37": "D"}
 
 # Headers converted from single-row to double-row per explicit user
 # direction: pin ORDER stays exactly the CLUSTERS/SPARE_CLUSTERS signal
@@ -96,16 +103,33 @@ COL_ORDER = {"J20": "A", "J21": "A", "J25": "A", "J27": "A", "J30": "A",
 # breakout -- no separate reordering pass needed.
 DOUBLE_ROW = {"J20", "J21", "J25", "J27", "J30", "J31", "J32", "J33", "J34", "J35"}
 
+# J35 holds its earlier physical footprint size (26 pins, PinHeader_2x13)
+# after 6 of its signals were reassigned to J37/MSC1 -- rather than shrink
+# the part (which the real board never did either, see
+# ground_spare_j35_pins.py), the schematic keeps the same 26-pin size too,
+# with the 6 freed positions turned into GND pins instead of signal pins.
+# Per explicit user direction, 2026-07-14.
+MIN_TOTAL = {"J35": 26}
+
 def header_geometry(ref, signals):
     """Resolve lib_id/footprint/pin-count for ref, loading the symbol (so its
     real pin cache is available) as a side effect. A double-row header needs
     an EVEN total pin count (2 pins per row); when GND+signals is odd, a
     second GND pin is appended at the far end (bottom-right, per explicit
-    user direction) rather than leaving a pin unconnected."""
+    user direction) rather than leaving a pin unconnected. MIN_TOTAL entries
+    override this to pad with MULTIPLE trailing GND pins instead, when a
+    header needs to keep a fixed physical size larger than its signal count
+    alone would produce."""
     double = ref in DOUBLE_ROW
     base_n = len(signals) + 1  # +1 GND reference pin at the top
-    second_gnd = double and (base_n % 2 == 1)
-    n = base_n + 1 if second_gnd else base_n
+    min_total = MIN_TOTAL.get(ref)
+    if min_total is not None and min_total > base_n:
+        extra_gnd = min_total - base_n
+        n = min_total
+    else:
+        second_gnd = double and (base_n % 2 == 1)
+        extra_gnd = 1 if second_gnd else 0
+        n = base_n + extra_gnd
     if double:
         rows = n // 2
         symname = f"Conn_02x{rows:02d}_Odd_Even"
@@ -124,7 +148,7 @@ def header_geometry(ref, signals):
     pins = s.pin_cache[lib_id]
     top_off = -max(p[3] for p in pins)
     bot_off = -min(p[3] for p in pins)
-    return lib_id, fp, n, second_gnd, top_off, bot_off
+    return lib_id, fp, n, extra_gnd, top_off, bot_off
 
 def place_header(ref, title, signals, x, y_center):
     # KiCad schematic Y increases DOWNWARD -- "visual_top" is the SMALLER
@@ -133,7 +157,7 @@ def place_header(ref, title, signals, x, y_center):
     # (caught by rendering a PDF and looking at it, not by the automated
     # checkers -- check_overlaps.py only knows about labels/properties, not
     # plain (text) elements).
-    lib_id, fp, n, second_gnd, top_off, bot_off = header_geometry(ref, signals)
+    lib_id, fp, n, extra_gnd, top_off, bot_off = header_geometry(ref, signals)
     visual_top = y_center + top_off
     visual_bottom = y_center + bot_off
     s.place(lib_id, ref, f"HDR_{ref}", x, y_center, 0, footprint=fp,
@@ -141,9 +165,11 @@ def place_header(ref, title, signals, x, y_center):
             value_at=(x + S(3), visual_top - S(2), 0))
     s.text(title, x - S(2), visual_top - S(5), 0, size=1.5, bold=True)
     # pin 1 = GND reference; pins 2..len(signals)+1 = signals, top to bottom;
-    # a trailing 2nd GND (if needed to fill out the double-row footprint)
-    # lands on the last pin number, which Odd_Even numbering always puts at
-    # the opposite (bottom-right) corner from pin 1.
+    # any trailing GND pins (one, to fill out an odd double-row footprint,
+    # or several, per MIN_TOTAL, to hold a header at a fixed physical size
+    # larger than its signal count needs) land on the LAST pin numbers,
+    # which Odd_Even numbering always puts at/near the opposite (bottom-
+    # right) corner from pin 1.
     p1 = s.pin(lib_id, x, y_center, 0, "1")
     d1 = s.pin_dir(lib_id, "1")
     s.flag("GND", p1, ref[1:], d1)
@@ -151,9 +177,10 @@ def place_header(ref, title, signals, x, y_center):
         p = s.pin(lib_id, x, y_center, 0, str(i + 2))
         d = s.pin_dir(lib_id, str(i + 2))
         s.label(sig, p[0], p[1], LABEL_ANGLE[d], global_=True)
-    if second_gnd:
-        pn = s.pin(lib_id, x, y_center, 0, str(n))
-        dn = s.pin_dir(lib_id, str(n))
+    for k in range(extra_gnd):
+        pn_num = len(signals) + 2 + k
+        pn = s.pin(lib_id, x, y_center, 0, str(pn_num))
+        dn = s.pin_dir(lib_id, str(pn_num))
         s.flag("GND", pn, ref[1:], dn)
 
 # Stack each column top-to-bottom (in CLUSTERS list order) with a running
