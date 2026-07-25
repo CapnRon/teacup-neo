@@ -1,11 +1,9 @@
-"""Initial interposer PCB -- rough first-pass placement only, no routing.
-Same approach as the carrier's own build_pcb.py: reads the exported
-netlist (kicadsexpr) and programmatically builds the board via the
-pcbnew Python API, since there's no netlist-to-PCB importer in
-kicad-cli. Board outline is NOT drawn separately -- the DIMM-DDR4
+"""Initial T41 interposer PCB -- J1 (DDR4 card edge) only, no SoC yet.
+Same netlist-driven placement approach as the T31ZX interposer's own
+build_pcb.py. Board outline is NOT drawn separately -- the DIMM-DDR4
 footprint's own Edge.Cuts geometry (the real JEDEC UDIMM card outline,
 notch + latch cutouts included) IS the board outline once J1 is placed
-at the origin.
+at the origin. Per explicit user direction, 2026-07-19.
 
 Run with the real KiCad 10.0.4 install:
     LD_LIBRARY_PATH=/opt/kicad10/AppDir/shared/lib:/opt/kicad10/AppDir/usr/lib \
@@ -14,9 +12,9 @@ Run with the real KiCad 10.0.4 install:
 import re
 import pcbnew
 
-REPO = "/home/administrator/projects/teacup-neo/hw/interposer"
-NETLIST = "/tmp/interposer.net"
-OUT = f"{REPO}/teacup-interposer.kicad_pcb"
+REPO = "/home/administrator/projects/teacup-neo/hw/interposer_t41"
+NETLIST = "/tmp/interposer_t41.net"
+OUT = f"{REPO}/teacup-interposer-t41.kicad_pcb"
 
 def parse_fp_lib_table(path, kiprjmod):
     text = open(path).read()
@@ -82,8 +80,13 @@ print(f"parsed {len(components)} components, {len(nets)} nets")
 # ---------------------------------------------------------------- board setup
 board = pcbnew.CreateEmptyBoard()
 ds = board.GetDesignSettings()
-ds.SetCopperLayerCount(4)  # docs/BUILD.md Phase 2: "1.0 mm board, 4-layer"
+ds.SetCopperLayerCount(4)  # matches the T31ZX interposer's stackup
 ds.SetBoardThickness(pcbnew.FromMM(1.0))
+# J1's own gold fingers are DESIGNED to sit at the physical board edge --
+# that's how a card-edge connector works. KiCad's 0.5mm default copper-
+# to-edge clearance would flag every one of those 288 pads. Matches the
+# T31ZX interposer's own board, which has this same override.
+ds.m_CopperEdgeClearance = pcbnew.FromMM(0.0)
 
 def mm(v):
     return pcbnew.FromMM(v)
@@ -98,32 +101,28 @@ def load_fp(fp_id):
     return fp
 
 # J1 (DIMM-DDR4): placed at the origin, unrotated -- its own Edge.Cuts
-# geometry becomes the board outline. Real UDIMM card, 133.35 x 31.25mm,
-# pad row at y=-0.25 (component area is y ~ -29.75..-2, well clear of
-# the top-edge notch/latch cutouts, which only exist near y > -2).
+# geometry becomes the board outline. Real UDIMM card, 133.35 x 31.25mm.
 J1_X, J1_Y = 0.0, 0.0
 
-# IC1 (T31ZX QFN89, ~10.25x10.25mm courtyard) centered in the available
-# component strip, roughly under the middle of the card.
-IC1_X, IC1_Y = 0.0, -16.0
+# U11 (T41 QFN96, ~13.2x12.9mm courtyard) centered in the available
+# component strip, roughly under the middle of the card -- same rough
+# placement convention as T31ZX's own IC1.
+U11_X, U11_Y = 0.0, -16.0
 
-# Local support passives, clustered near IC1 -- rough scatter, not a
-# considered layout (matches the carrier's own "rough first pass, user
-# refines by hand" convention).
+# Local support passives, clustered near U11 -- rough scatter, not a
+# considered layout (matches the T31ZX interposer's own "rough first
+# pass, user refines by hand" convention).
 PASSIVE_POS = {
-    "Y1": (-25.0, -8.0), "C20": (-20.0, -8.0), "C21": (-15.0, -8.0), "R21": (-10.0, -8.0),
-    "R10": (-25.0, -24.0), "R11": (-20.0, -24.0), "C19": (-15.0, -24.0), "C22": (-10.0, -24.0),
-    "C37": (15.0, -6.0), "C41": (19.0, -6.0), "C42": (23.0, -6.0), "C43": (27.0, -6.0),
-    "C44": (31.0, -6.0), "C45": (35.0, -6.0), "C46": (39.0, -6.0),
-    "C25": (15.0, -26.0), "C26": (19.0, -26.0), "C28": (23.0, -26.0), "C30": (27.0, -26.0),
-    "C31": (31.0, -26.0), "C32": (35.0, -26.0), "C34": (39.0, -26.0), "C35": (43.0, -26.0),
-    "U4": (48.0, -16.0),
+    "Y1": (-25.0, -8.0), "C77": (-20.0, -8.0), "C80": (-15.0, -8.0),
+    "R24": (-10.0, -8.0), "R23": (-5.0, -8.0),
+    "R16": (-25.0, -24.0), "R18": (-20.0, -24.0), "R20": (-15.0, -24.0), "C69": (-10.0, -24.0),
+    "C43": (15.0, -6.0), "C44": (19.0, -6.0), "C45": (23.0, -6.0), "C46": (27.0, -6.0),
+    "C47": (31.0, -6.0), "C48": (35.0, -6.0), "C49": (39.0, -6.0), "C50": (43.0, -6.0),
+    "C24": (15.0, -26.0), "C25": (19.0, -26.0), "C26": (23.0, -26.0), "C27": (27.0, -26.0),
+    "C51": (31.0, -26.0), "C52": (35.0, -26.0), "C53": (39.0, -26.0), "C54": (43.0, -26.0),
+    "C55": (48.0, -6.0), "C56": (52.0, -6.0), "C57": (56.0, -6.0),
+    "U7": (48.0, -22.0),
     "#PWR91": (10.0, -2.0), "#PWR92": (13.0, -2.0), "#PWR93": (16.0, -2.0), "#PWR94": (19.0, -2.0),
-    # Bring-up test points, strung along the far edge (y=-28, well clear of
-    # the notch/latch area near the pad row and away from every other
-    # cluster) for easy probe access with the module seated.
-    "TP1": (-60.0, -27.0), "TP2": (-45.0, -27.0), "TP3": (-30.0, -27.0),
-    "TP4": (0.0, -27.0), "TP5": (13.0, -21.0), "TP6": (33.0, -21.0), "TP7": (50.0, -27.0),
 }
 
 footprints = {}
@@ -140,8 +139,8 @@ for ref, info in sorted(components.items()):
 
     if ref == "J1":
         fp.SetPosition(pcbnew.VECTOR2I(mm(J1_X), mm(J1_Y)))
-    elif ref == "IC1":
-        fp.SetPosition(pcbnew.VECTOR2I(mm(IC1_X), mm(IC1_Y)))
+    elif ref == "U11":
+        fp.SetPosition(pcbnew.VECTOR2I(mm(U11_X), mm(U11_Y)))
     elif ref in PASSIVE_POS:
         x, y = PASSIVE_POS[ref]
         fp.SetPosition(pcbnew.VECTOR2I(mm(x), mm(y)))

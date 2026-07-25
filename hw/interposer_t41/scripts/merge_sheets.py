@@ -1,14 +1,19 @@
+"""Merge sheets into the T41 interposer's top-level schematic. Same
+flat-merge technique as the T31ZX interposer (content copied/positioned
+into one page with a visual frame, not true KiCad sheet hierarchy). Per
+explicit user direction, 2026-07-19.
+"""
 import re
 
-SHEETS_DIR = "/home/administrator/projects/teacup-neo/hw/interposer/sheets"
-OUT = "/home/administrator/projects/teacup-neo/hw/interposer/teacup-interposer.kicad_sch"
+SHEETS_DIR = "/home/administrator/projects/teacup-neo/hw/interposer_t41/sheets"
+OUT = "/home/administrator/projects/teacup-neo/hw/interposer_t41/teacup-interposer-t41.kicad_sch"
 
 def S(n):
     return round(n * 1.27, 2)
 
 SHEETS = [
-    ("soc", S(0), S(0), "SoC (T31ZX reference)"),
-    ("ddr4_edge", S(240), S(0), "DDR4 UDIMM-288 CARD EDGE"),
+    ("soc", S(0), S(0), "SoC (T41 reference)"),
+    ("ddr4_edge", S(240), S(0), "DDR4 UDIMM-288 CARD EDGE (T41)"),
 ]
 
 def split_lib_symbols_and_body(text):
@@ -130,11 +135,11 @@ out = f'''(kicad_sch
 \t(version 20250114)
 \t(generator "eeschema")
 \t(generator_version "10.0")
-\t(uuid "b2c3d4e5-0001-4000-8000-000000000001")
+\t(uuid "a1b2c3d4-0041-4000-8000-000000000001")
 \t(paper "A0")
 \t(title_block
-\t\t(title "Teacup Interposer - T31ZX Reference")
-\t\t(date "2026-07-18")
+\t\t(title "Teacup Interposer - T41 Reference")
+\t\t(date "2026-07-19")
 \t\t(rev "A")
 \t\t(company "Teacup Universal")
 \t)
