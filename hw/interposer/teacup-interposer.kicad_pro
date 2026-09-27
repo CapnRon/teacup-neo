@@ -323,7 +323,7 @@
         "bus_width": 12,
         "clearance": 0.15,
         "diff_pair_gap": 0.2,
-        "diff_pair_width": 0.18,
+        "diff_pair_width": 0.15,
         "line_style": 0,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
@@ -331,7 +331,7 @@
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 0,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.2,
+        "track_width": 0.15,
         "tuning_profile": "",
         "via_diameter": 0.6,
         "via_drill": 0.3,
@@ -393,15 +393,43 @@
       {
         "netclass": "USB",
         "pattern": "/USB_D-"
+      },
+      {
+        "netclass": "MIPI",
+        "pattern": "MIPI0_CLKP"
+      },
+      {
+        "netclass": "MIPI",
+        "pattern": "MIPI0_CLKN"
+      },
+      {
+        "netclass": "MIPI",
+        "pattern": "MIPI0_D0P"
+      },
+      {
+        "netclass": "MIPI",
+        "pattern": "MIPI0_D0N"
+      },
+      {
+        "netclass": "MIPI",
+        "pattern": "MIPI0_D1P"
+      },
+      {
+        "netclass": "MIPI",
+        "pattern": "MIPI0_D1N"
       }
     ]
   },
   "pcbnew": {
     "last_paths": {
+      "gencad": "",
       "idf": "",
       "netlist": "",
       "plot": "",
+      "pos_files": "",
       "specctra_dsn": "",
+      "step": "",
+      "svg": "",
       "vrml": ""
     },
     "page_layout_descr_file": ""
