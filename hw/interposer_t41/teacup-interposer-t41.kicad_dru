@@ -1,0 +1,29 @@
+(version 1)
+
+# U11 (T41 QFN96) has 0.17mm-wide pads on what measures out to roughly
+# 0.4mm pitch -- only ~0.23mm of actual copper-to-copper gap between
+# adjacent same-row pads, tighter than the board-wide 0.2mm clearance
+# rule allows. This rule relaxes clearance/track-width/via sizing, but
+# only inside the "underT41" rule area (see build_pcb.py /
+# add_t41_rule_area.py) placed around U11's courtyard plus its
+# immediate escape-fanout region -- the rest of the board keeps the
+# normal rules. Same technique and same values as the T31ZX interposer's
+# own "underT31" rule, which faced the identical class of problem.
+# Per explicit user direction, 2026-07-19.
+(rule "T41_finepitch_clearance"
+	(condition "A.intersectsArea('underT41')")
+	(constraint clearance (min 0.05mm))
+)
+(rule "T41_finepitch_track_width"
+	(condition "A.intersectsArea('underT41')")
+	(constraint track_width (min 0.1mm) (opt 0.1mm))
+)
+(rule "T41_finepitch_via"
+	(condition "A.intersectsArea('underT41')")
+	(constraint via_diameter (min 0.3mm))
+	(constraint hole_size (min 0.15mm))
+)
+(rule "T41_finepitch_hole_clearance"
+	(condition "A.intersectsArea('underT41')")
+	(constraint hole_clearance (min 0.15mm))
+)
